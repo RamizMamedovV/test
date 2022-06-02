@@ -14,9 +14,11 @@ public class Plane {
         //plane.dropBombs();
         plane.flyStraight(40);
         plane.printPosition();
-       /*plane.flyDown(100, 10);
-        plane.fillFuel();
         plane.flyDown(100, 10);
-        plane.fillFuel();*/
+        //plane.fillFuel();
+        plane.flyDown(100, 10);
+        //plane.fillFuel();*/
+        plane.printPosition();
+
     }
 }

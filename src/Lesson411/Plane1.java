@@ -4,13 +4,13 @@ class Plane1 {
     private int x = 0;
     private int y = 0;
     private int[] direction = {1, 0};
-    private int v;
+    private int visota;
     private int fuel = 300;
 
-    public Plane1(int x, int y, int v, int fuel) {
+    public Plane1(int x, int y, int visota, int fuel) {
         this.x = x;
         this.y = y;
-        this.v = v;
+        this.visota = visota;
         this.fuel = fuel;
     }
 
@@ -21,18 +21,18 @@ class Plane1 {
     public void flyStraight(int distance) {
         this.x += distance * direction[0];
         this.y = distance * direction[1];
-        this.v = v;
+        this.visota = visota;
         this.fuel -= distance;
     }
 
     public void flyUp(int distance,int visota) {
         this.x += distance * direction[0];
         this.y += distance * direction[1];
-        this.v += distance;
+        this.visota += distance;
         this.fuel -= distance;
     }
     public void printPosition() {
-        System.out.println("vas samolyot " + x + "," + y + ". visota: " + v + ", fuel: " + fuel + "now");
+        System.out.println("vas samolyot " + x + "," + y + ". visota: " + visota + ", fuel: " + fuel + "now");
     }
     public void turnRight() {
         if (direction[0] == 0) {
@@ -42,5 +42,12 @@ class Plane1 {
             direction[1] = direction[0];
             direction[0] = 0;
         }
+    }
+
+    public void flyDown(int distance,int visota) {
+        this.x += distance * direction[0];
+        this.y += distance * direction[1];
+        this.visota -= distance;
+        this.fuel -= distance;
     }
 }
