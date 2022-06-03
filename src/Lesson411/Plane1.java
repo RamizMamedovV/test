@@ -4,8 +4,9 @@ class Plane1 {
     private int x = 0;
     private int y = 0;
     private int[] direction = {1, 0};
-    private int visota;
+    private int visota = 0;
     private int fuel = 300;
+    private int bombs = 10;
 
     public Plane1(int x, int y, int visota, int fuel) {
         this.x = x;
@@ -21,14 +22,14 @@ class Plane1 {
     public void flyStraight(int distance) {
         this.x += distance * direction[0];
         this.y = distance * direction[1];
-        this.visota = visota;
+        visota = 100;
         this.fuel -= distance;
     }
 
     public void flyUp(int distance,int visota) {
         this.x += distance * direction[0];
         this.y += distance * direction[1];
-        this.visota += distance;
+        this.visota += visota;
         this.fuel -= distance;
     }
     public void printPosition() {
@@ -47,7 +48,13 @@ class Plane1 {
     public void flyDown(int distance,int visota) {
         this.x += distance * direction[0];
         this.y += distance * direction[1];
-        this.visota -= distance;
+        this.visota -= visota;
         this.fuel -= distance;
+    }
+
+    public void dropBombs(int bombs) {
+        this.bombs = bombs;
+        System.out.println("drop bombs " + bombs + "psc");
+        this.printPosition();
     }
 }

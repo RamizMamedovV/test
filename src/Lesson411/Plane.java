@@ -11,7 +11,7 @@ public class Plane {
         plane.printPosition();
         plane.flyStraight(30);
         plane.printPosition();
-        //plane.dropBombs();
+        plane.dropBombs(4);
         plane.flyStraight(40);
         plane.printPosition();
         plane.flyDown(100, 10);
